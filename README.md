@@ -18,6 +18,7 @@ Stop all running containers:
 
 Once all is up, run the following command to run the migrations:
 
+### `docker exec -it teamcmp_php bin/console composer install`
 ### `docker exec -it teamcmp_php bin/console doctrine:migrations:migrate`
 
 The API is available at:
