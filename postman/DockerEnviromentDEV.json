@@ -1,0 +1,14 @@
+{
+	"id": "0a86980a-0663-4f42-8c47-2ecf20a9b7bd",
+	"name": "Docker DEV",
+	"values": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-06-22T16:20:51.920Z",
+	"_postman_exported_using": "Postman/8.6.2"
+}
