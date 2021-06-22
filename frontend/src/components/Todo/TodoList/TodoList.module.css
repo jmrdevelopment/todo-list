@@ -1,0 +1,6 @@
+.TodoList button {
+    border: 0;
+    background: 0;
+    font-weight: 700;
+    cursor: pointer;
+}

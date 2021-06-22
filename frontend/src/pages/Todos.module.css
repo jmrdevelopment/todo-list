@@ -1,0 +1,19 @@
+.Todos {
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.Todos header {
+    text-align: center;
+}
+
+.Todos .Content {
+    margin: auto;
+    box-shadow: 0 0px 10px 5px rgb(0 0 0 / 10%);
+    padding: 10px;
+}
+
+.Todos .Content form {
+    margin-bottom: 50px;
+}

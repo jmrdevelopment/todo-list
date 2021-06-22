@@ -1,0 +1,52 @@
+.TodoItem {
+    margin: 10px 0;
+    font-size: 13px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+
+.TodoItem .Header {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #ffe3e3;
+}
+
+.TodoItem.Done .Header {
+    background-color: #a83030;
+}
+
+.TodoItem .Icon {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+}
+
+.TodoItem .Title {
+    display: inline-block;
+    width: 100%;
+    padding: 0 5px;
+    margin-right: 5px;
+    overflow: hidden;
+}
+
+.TodoItem.Done .Title {
+    text-decoration: line-through;
+}
+
+.TodoItem .Remove {
+    font-weight: 700;
+}
+
+.TodoItem .Detail {
+    padding: 5px;
+    background-color: #e99d9d;
+}
+
+.TodoItem .Detail .Date {
+    font-size: 10px;
+    font-weight: 700;
+}

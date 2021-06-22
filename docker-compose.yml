@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+    nginx:
+        container_name: teamcmp_nginx
+        build:
+            context: .
+            dockerfile: ./docker/nginx/Dockerfile
+        volumes:
+            - ./backend/:/var/www/app/
+        ports:
+            - 8080:80
+        networks:
+            - symfony
+        links:
+            - react
+    php:
+        container_name: teamcmp_php
+        build:
+            context: .
+            dockerfile: ./docker/php/Dockerfile
+        environment:
+            APP_ENV: dev
+        volumes:
+            - ./backend/:/var/www/app/
+        networks:
+            - symfony
+        depends_on:
+            - mysql
+    mysql:
+        container_name: teamcmp_mysql
+        image: mysql:latest
+        environment:
+            MYSQL_DATABASE: todos
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: test
+            MYSQL_ROOT_PASSWORD: test
+        ports:
+            - 3307:3306
+        volumes:
+            - ./docker/dbdata:/var/lib/mysql
+        networks:
+            - symfony
+    react:
+        image: node:latest
+        container_name: teamcmp_react
+        environment:
+            - NPM_CONFIG_LOGLEVEL=warn
+            - NODE_ENV=dev
+        user: node
+        ports:
+            - 3000:3000
+        command: bash -c "npm install && npm start"
+        working_dir: /home/node/app/frontend
+        volumes:
+            - ./:/home/node/app
+networks:
+    symfony:
